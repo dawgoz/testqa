@@ -546,30 +546,30 @@ public class DBUtils {
         return ret;
     }
 
-    public static boolean isSubCategoryDeleteValid(int subCategoryId) {
-        boolean ret = true;
-        try {
-            dbConnect();
-            Connection connection = getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM games WHERE sub_category_id = " + subCategoryId);
-            ResultSet resultSet = preparedStatement.executeQuery();
+    // public static boolean isSubCategoryDeleteValid(int subCategoryId) {
+    //     boolean ret = true;
+    //     try {
+    //         dbConnect();
+    //         Connection connection = getConnection();
+    //         PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM games WHERE sub_category_id = " + subCategoryId);
+    //         ResultSet resultSet = preparedStatement.executeQuery();
 
-            if (!resultSet.isBeforeFirst()) {
-                teardown(resultSet, preparedStatement, null);
-                ret = true;
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("Unable to delete sub-category, because it is in use!");
-                alert.show();
-                teardown(resultSet, preparedStatement, null);
-                ret = false;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    //         if (!resultSet.isBeforeFirst()) {
+    //             teardown(resultSet, preparedStatement, null);
+    //             ret = true;
+    //         } else {
+    //             Alert alert = new Alert(Alert.AlertType.ERROR);
+    //             alert.setContentText("Unable to delete sub-category, because it is in use!");
+    //             alert.show();
+    //             teardown(resultSet, preparedStatement, null);
+    //             ret = false;
+    //         }
+    //     } catch (SQLException e) {
+    //         e.printStackTrace();
+    //     }
 
-        return ret;
-    }
+    //     return ret;
+    // }
 
     public static ArrayList<Game> getGames(String condition) throws Exception {
         ArrayList<Game> gameList = new ArrayList<>();
@@ -710,14 +710,14 @@ public class DBUtils {
         }
     }
 
-    public static ObservableList<IsAdmin> getIsAdminList() {
-        ObservableList<IsAdmin> isAdmins = FXCollections.observableArrayList();
-        IsAdmin isAdmin;
-        IsAdmin isAdmin1;
-        isAdmin = new IsAdmin(0, "No");
-        isAdmin1 = new IsAdmin(1, "Yes");
-        isAdmins.add(isAdmin);
-        isAdmins.add(isAdmin1);
-        return isAdmins;
-    }
+    // public static ObservableList<IsAdmin> getIsAdminList() {
+    //     ObservableList<IsAdmin> isAdmins = FXCollections.observableArrayList();
+    //     IsAdmin isAdmin;
+    //     IsAdmin isAdmin1;
+    //     isAdmin = new IsAdmin(0, "No");
+    //     isAdmin1 = new IsAdmin(1, "Yes");
+    //     isAdmins.add(isAdmin);
+    //     isAdmins.add(isAdmin1);
+    //     return isAdmins;
+    // }
 }
