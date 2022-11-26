@@ -626,20 +626,20 @@ public class DBUtils {
         return userList;
     }
 
-    public static void insertUser(String name, String username, String password, int isAdmin) {
-        dbInit("mysql", "localhost", "3306", "game_shop", "root", "password");
-        DBUtils.executeQuery("INSERT INTO users (name, username, password, is_admin) VALUES ('" + name + "', '" + username + "', '" + password + "', " + isAdmin + ")");
-    }
+    // public static void insertUser(String name, String username, String password, int isAdmin) {
+    //     dbInit("mysql", "localhost", "3306", "game_shop", "root", "password");
+    //     DBUtils.executeQuery("INSERT INTO users (name, username, password, is_admin) VALUES ('" + name + "', '" + username + "', '" + password + "', " + isAdmin + ")");
+    // }
 
-    public static void deleteUser(int id) {
-        dbInit("mysql", "localhost", "3306", "game_shop", "root", "password");
-        DBUtils.executeQuery("DELETE FROM users WHERE id = " + id);
-    }
+    // public static void deleteUser(int id) {
+    //     dbInit("mysql", "localhost", "3306", "game_shop", "root", "password");
+    //     DBUtils.executeQuery("DELETE FROM users WHERE id = " + id);
+    // }
 
-    public static void updateUser(String name, String username, String password, int isAdmin, int id) {
-        dbInit("mysql", "localhost", "3306", "game_shop", "root", "password");
-        DBUtils.executeQuery("UPDATE users SET name = '" + name + "',  username = '" + username + "', password= '" + password + "', is_admin = " + isAdmin + " WHERE id = " + id);
-    }
+    // public static void updateUser(String name, String username, String password, int isAdmin, int id) {
+    //     dbInit("mysql", "localhost", "3306", "game_shop", "root", "password");
+    //     DBUtils.executeQuery("UPDATE users SET name = '" + name + "',  username = '" + username + "', password= '" + password + "', is_admin = " + isAdmin + " WHERE id = " + id);
+    // }
 
     public static User getUserByLoginData(String username, String password) {
         dbInit("mysql", "localhost", "3306", "game_shop", "root", "password");
@@ -710,14 +710,14 @@ public class DBUtils {
         }
     }
 
-    public static ObservableList<IsAdmin> getIsAdminList() {
-        ObservableList<IsAdmin> isAdmins = FXCollections.observableArrayList();
-        IsAdmin isAdmin;
-        IsAdmin isAdmin1;
-        isAdmin = new IsAdmin(0, "No");
-        isAdmin1 = new IsAdmin(1, "Yes");
-        isAdmins.add(isAdmin);
-        isAdmins.add(isAdmin1);
-        return isAdmins;
-    }
+    // public static ObservableList<IsAdmin> getIsAdminList() {
+    //     ObservableList<IsAdmin> isAdmins = FXCollections.observableArrayList();
+    //     IsAdmin isAdmin;
+    //     IsAdmin isAdmin1;
+    //     isAdmin = new IsAdmin(0, "No");
+    //     isAdmin1 = new IsAdmin(1, "Yes");
+    //     isAdmins.add(isAdmin);
+    //     isAdmins.add(isAdmin1);
+    //     return isAdmins;
+    // }
 }
