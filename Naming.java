@@ -2,30 +2,32 @@ package az.alizeynalli.cleancode.naming;
 
 public class Naming {
 
-    public Date d;
-    public List<Testcase> find(User user){};
-    
-    public Account[] AccountList;
+    public Date modifiedDate;
+    public List<Testcase> findAllTestcasesByUser(User user){};
 
-    public void deleteUser(User pUser){};
-    
-    public URL r;
-  
-    public class TableRepresent{};
-    pubcli void car(){};
-  
-    public saveUser(){}; createAccount(){}; generateContract(){};
+    public List<Account> AccountList;
 
-    public class AccountFactory{}
-    public class AccountObserver{}
-    
+    public void deleteUser(User user){};
+
+    public URL url;
+  
+    public class TableRepresenter {};
+    public void saveCar(){};
+
+    public saveUser(){}; saveAccount(){}; saveContract(){};
+
+    public class AccountFactory{} // Factory Pattern
+    public class AccountObserver{} // Observer Pattern
+     
     public class User;
     public String userName;  
     public void editUser(User user){};
 
-    public void saveIfUserUnder18(){};
-    public class UserFormRealTimeFiller {};
-    
-    public int daysInYear = 360;
-    public int hoursInWeek = 168;
+    public void saveUnderage(){};  
+    public class UserFiller {};
+
+    public enum Calendar {
+    DAYS_IN_YEAR(360), 
+    HOURS_IN_WEEK(168)    
+    }
 }
